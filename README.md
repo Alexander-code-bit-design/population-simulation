@@ -4,14 +4,12 @@
 
 ## 文件说明
 
-- `index.html`：主版本，配合 `styles.css` 和 `app.js` 使用。
-- `simulation.zip`：离线 local 版本压缩包，里面只保留 `population-aging-local.html`。
+- `simulation.zip`：离线 local 版本压缩包，里面是 `population-aging-local.html`可直接在浏览器中运行。
 
 ## 使用方法
 
 1. 下载仓库所有文件。
-2. 打开 `index.html` 运行主版本。
-3. 如果想使用单文件离线版，解压 `simulation.zip`，然后打开 `population-aging-local.html`。
+2. 解压 `simulation.zip`，然后打开 `population-aging-local.html`。
 
 ## 模拟参数
 
@@ -24,3 +22,7 @@
 - 自然增长率：根据最近几秒的人口变化估算。
 - 老龄人口比例：退休年龄及以上人口占总人口的比例。
 - 总人口：当前画布中仍在模拟的人口数量。
+
+## 提示
+
+- 
