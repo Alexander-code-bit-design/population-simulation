@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Population Aging Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app">
+      <section class="workspace" aria-label="Population aging simulation">
+        <div class="topbar">
+          <div>
+            <h1>Population Aging Simulator</h1>
+            <p>Births enter at age 0, age across the timeline, retire past the marker, and leave at life expectancy.</p>
+          </div>
+          <div class="actions">
+            <button id="pauseButton" type="button" aria-pressed="false">Pause</button>
+            <button id="resetButton" type="button">Reset</button>
+          </div>
+        </div>
+
+        <canvas id="simulationCanvas" width="1200" height="520" aria-label="Population spheres moving along an age timeline"></canvas>
+
+        <div class="axis" aria-hidden="true">
+          <span>Age 0</span>
+          <span id="retirementAxisLabel">Retirement: 65</span>
+          <span id="lifeAxisLabel">Life expectancy: 82</span>
+        </div>
+      </section>
+
+      <aside class="panel" aria-label="Simulation controls and metrics">
+        <section class="controls" aria-label="Adjustable parameters">
+          <h2>Parameters</h2>
+          <label class="control">
+            <span>
+              <strong>Birth Rate</strong>
+              <output id="birthRateValue">12.0 births/sec</output>
+            </span>
+            <input id="birthRate" type="range" min="1" max="40" step="0.5" value="12">
+          </label>
+
+          <label class="control">
+            <span>
+              <strong>Average Life Expectancy</strong>
+              <output id="lifeExpectancyValue">82 years</output>
+            </span>
+            <input id="lifeExpectancy" type="range" min="45" max="105" step="1" value="82">
+          </label>
+
+          <label class="control">
+            <span>
+              <strong>Retirement Age</strong>
+              <output id="retirementAgeValue">65 years</output>
+            </span>
+            <input id="retirementAge" type="range" min="35" max="90" step="1" value="65">
+          </label>
+        </section>
+
+        <section class="metrics" aria-label="Read-only metrics">
+          <h2>Metrics</h2>
+          <div class="metric">
+            <span>Natural Growth Rate</span>
+            <strong id="growthRateMetric">0.0% / sec</strong>
+          </div>
+          <div class="metric">
+            <span>Proportion of Aging Population</span>
+            <strong id="agingMetric">0.0%</strong>
+          </div>
+          <div class="metric">
+            <span>Total Population</span>
+            <strong id="populationMetric">0</strong>
+          </div>
+        </section>
+      </aside>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
